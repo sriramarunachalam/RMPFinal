@@ -1,0 +1,54 @@
+<div class="PreviousRequests">
+    <div class="container">
+        <h2>Welcome to Accounts Page</h2>
+            <br><br>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Request Number</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">No. of Developers</th>
+                        <th scope="col">Technology</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let Account of CompanyAccounts">
+                        <td>{{Account.RequestNumber}}</td>
+                        <td>{{Account.Client}}</td>
+                        <td>{{Account.NumDevelopers}}</td>
+                        <td>{{Account.Technology}}</td>
+                        <td>{{Account.StartDate}}</td>
+                        <td>{{Account.EndDate}}</td>
+                        <td><button class="btn btn-success" (click)="DisplayAccount(Account)">View</button></td>
+                      </tr>
+              </tbody>
+          </table>
+
+          <div class="card" style="width: 20rem;" id="RequestCard" *ngIf="DisplayCard">
+            <div class="card-body">
+                <h5 class="card-title">Previous Request</h5>
+                <hr>
+                <label><strong>Client</strong></label>
+                <p id="Client">{{DisplaySingleAccount.Client}}</p>
+                
+                <label><strong>No. of Developers</strong></label>
+                <p id="Developers">{{DisplaySingleAccount.NumDevelopers}}</p>
+                
+                <label><strong>Technology</strong></label>
+                <p id="Technology">{{DisplaySingleAccount.Technology}}</p>
+                
+                <label><strong>Start Date</strong></label>
+                <p id="StartDate">{{DisplaySingleAccount.StartDate}}</p>
+                
+                <label><strong>End Date</strong></label>
+                <p id="EndDate">{{DisplaySingleAccount.EndDate}}</p>
+                <button class="btn btn-primary" (click)="CancelCard()">Cancel</button>
+            </div>
+          </div>
+    </div>
+</div>
+
+
