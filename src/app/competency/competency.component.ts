@@ -9,6 +9,7 @@ import { OperationsService } from '../operations.service';
 })
 export class CompetencyComponent implements OnInit {
   OnProjectEmployees: Competency[];
+  
 
   constructor(private operationService: OperationsService) { }
 
@@ -17,6 +18,24 @@ export class CompetencyComponent implements OnInit {
       (ProjectData)=> {
         this.OnProjectEmployees = ProjectData
       });
-  }
 
+  }
+  OnBench(){
+    this.operationService.GetOnBenchEmployees().subscribe(
+      (OnBenchData)=> {
+        this.OnProjectEmployees = OnBenchData
+      });
+  }
+  OnProject(){
+    this.operationService.GetProjectEmployees().subscribe(
+      (ProjectData)=> {
+        this.OnProjectEmployees = ProjectData
+      });
+  }
+  OnTraining(){
+    this.operationService.GetOnTraningEmployees().subscribe(
+      (OnTrainingData)=> {
+        this.OnProjectEmployees = OnTrainingData
+      });
+  }
 }

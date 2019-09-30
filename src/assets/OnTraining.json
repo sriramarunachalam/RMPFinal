@@ -1,7 +1,7 @@
 [
     {
       "EmployeeName": "Lionel Messi",
-      "CurrentProject": "On Beanch",
+      "CurrentProject": "In Training",
       "Email": "Aditya@example.com",
       "ContactNumber": "(203)583-9169",
       "Technology": "Java",
@@ -9,7 +9,7 @@
     },
     {
       "EmployeeName": "Cristiano Ronaldo",
-      "CurrentProject": "On Beanch",
+      "CurrentProject": "In Training",
       "Email": "Shethiya@example.com",
       "ContactNumber": "(203)584-9269",
       "Technology": "Angular",
@@ -17,7 +17,7 @@
     },
     {
       "EmployeeName": "James Rodriguez",
-      "CurrentProject": "On Beanch",
+      "CurrentProject": "In Training",
       "Email": "Tatya@example.com",
       "ContactNumber": "(203)586-9369",
       "Technology": "React",

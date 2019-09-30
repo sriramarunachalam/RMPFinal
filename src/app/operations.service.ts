@@ -20,4 +20,11 @@ export class OperationsService {
     return this.Http.get<Accounts[]>('assets/Toyota.json');
   }
 
+  GetOnBenchEmployees() {
+    return this.Http.get<Competency[]>('assets/OnBench.json');
+  }
+  GetOnTraningEmployees() {
+    return this.Http.get<Competency[]>('assets/OnTraining.json');
+  }
 }
+
