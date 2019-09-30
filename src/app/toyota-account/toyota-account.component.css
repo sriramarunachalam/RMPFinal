@@ -1,0 +1,28 @@
+h2 {
+    margin-top: 10%;
+}
+#ResourceButton {
+    margin-left: 75%;
+}
+.NewRequest {
+    margin: 15px;
+}
+
+.modal{
+    margin-right:  10px;
+}
+#StartDate {
+    margin: 5px;
+}
+
+#EndDate {
+    margin: 5px;
+}
+.Date1 {
+    display: block;
+}
+
+.btn-primary {
+    margin-right: 15px;
+
+}

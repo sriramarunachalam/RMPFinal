@@ -1,0 +1,121 @@
+<div class="PreviousRequests">
+        <div class="container">
+            <h2>Welcome to TOYOTA Accounts Page</h2>
+                 <div class="NewRequest">
+                <button class="btn btn-primary" id="ResourceButton" data-toggle="modal" data-target="#NewRequestModal">Raise new Resource Request</button>
+                 </div>
+                <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Request Number</th>
+                            <th scope="col">No. of Developers</th>
+                            <th scope="col">Technology</th>
+                            <th scope="col">Job Description</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let Account of ToyotaAccount; let i = index">
+                            <td>{{i+100}}</td>
+                            <td>{{Account.NumDevelopers}}</td>
+                            <td>{{Account.Technology}}</td>
+                            <td>{{Account.JobDescription}}</td>
+                            <td>{{Account.StartDate}}</td>
+                            <td>{{Account.EndDate}}</td>
+                            <td><button class="btn btn-success" (click)="DisplayAccount(Account)">Status</button></td>
+                          </tr>
+                      </tbody>
+              </table>
+
+              <div class="modal fade" id="NewRequestModal">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title">Create a New Request</h4>
+                          <div class="alert alert-success" *ngIf="DisplayMessage">
+                                <strong>Success!</strong> Record Added Succesfully!
+                         </div>
+                        </div>
+
+                        
+
+                        <div class="modal-body" >
+                            <form #NewRequestForm="ngForm" (submit)="SubmitForm(NewRequestForm)">
+
+                                <div class="form-group">
+                                    <label for="SelectRequirements">
+                                      <strong>Select the Number of Developers Required:</strong>
+                                    </label>
+                                    <select class="form-control" id="NumDevelopers" required ngModel name="NumDevelopers">
+                                        <option value="">Select...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="SelectTechnology"><strong>Select the Technology:</strong></label>
+                                    <select class="form-control" id="Technology" required ngModel name="Technology">
+                                        <option value="">Select...</option>
+                                        <option value="Java">Java</option>
+                                        <option value=".NET">.NET</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="JobDescription"><strong>Job Description:</strong></label>
+                                    <textarea class="form-control" rows="5" id="JobDescription" ngModel name="JobDescription"></textarea>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label class="Date1"><strong>Start Date:</strong></label>
+                                    <input type="date"  class="form-control" id="StartDate" ngModel name="StartDate">
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label class="Date1"><strong>End Date:</strong></label>
+                                    <input type="date"  class="form-control" id="EndDate" ngModel name="EndDate">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </form>
+                          </div> 
+
+
+                    </div>
+                  </div>
+              </div>
+    
+              <div class="card" style="width: 20rem;" id="RequestCard" *ngIf="DisplayCard">
+                <div class="card-body">
+                    <h5 class="card-title">Previous Request</h5>
+                    <hr>
+                    <label><strong>Client</strong></label>
+                    <p id="Client">Toyota</p>
+                    
+                    <label><strong>No. of Developers</strong></label>
+                    <p id="Developers">{{DisplaySingleToyota.NumDevelopers}}</p>
+                    
+                    <label><strong>Technology</strong></label>
+                    <p id="Technology">{{DisplaySingleToyota.Technology}}</p>
+
+                    
+                    <label><strong>Job Description</strong></label>
+                    <p id="StartDate">{{DisplaySingleToyota.JobDescription}}</p>
+                    
+                    <label><strong>Start Date</strong></label>
+                    <p id="StartDate">{{DisplaySingleToyota.StartDate}}</p>
+                    
+                    <label><strong>End Date</strong></label>
+                    <p id="EndDate">{{DisplaySingleToyota.EndDate}}</p>
+                    <button class="btn btn-primary" (click)="CancelCard()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>    

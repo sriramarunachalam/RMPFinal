@@ -1,8 +1,7 @@
 export class Accounts {
-    RequestNumber: number;
-    Client: string;
-    NumDevelopers: number;
+    NumDevelopers: string;
     Technology: string;
+    JobDescription: string;
     StartDate: string;
     EndDate: string;
 }
