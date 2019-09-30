@@ -4,12 +4,15 @@ import {HomeComponent} from './home/home.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { CompetencyComponent } from './competency/competency.component';
 import { LoginComponent } from './login/login.component';
+import { ToyotaAccountComponent } from './toyota-account/toyota-account.component';
+import { NewRequestComponent } from './new-request/new-request.component';
 
 const routes: Routes=[
     {path: '', component: HomeComponent },
     {path: 'Home', component: HomeComponent},
-    {path: 'Accounts', component: AccountsComponent},
+    {path: 'Accounts', component: ToyotaAccountComponent},
     {path: 'Competency', component: CompetencyComponent},
+    {path: 'NewRequest', component: NewRequestComponent},
     {path: 'Login', component: LoginComponent},
 
     // Create the Routes

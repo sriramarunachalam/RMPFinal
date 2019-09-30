@@ -1,0 +1,45 @@
+<div class="container" id="AccountsForm">
+        <h2>Create a new Request</h2>
+        <hr>
+        <form action="AccountsList.html">
+            <div class="form-group">
+                <label for="SelectRequirements"><strong>Select the Number of Developers Required:</strong>
+                </label>
+                <select class="form-control" id="SelectRequirements">
+                    <option value="">Select...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+
+                <label for="SelectTechnology"><strong>Select the Technology:</strong></label>
+                <select class="form-control" id="SelectTechnology">
+
+                    <option value="">Select...</option>
+                    <option value="Java">Java</option>
+                    <option value=".NET">.NET</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="JobDescription"><strong>Job Description:</strong></label>
+
+                <textarea required class="form-control" rows="5" id="JobDescription"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="StartDate"><strong>Start Date:</strong></label>
+                <input type="date" id="StartDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="EndDate"><strong>End Date:</strong></label>
+                <input type="date" id="EndDate" required>
+
+            </div>
+            <button type="button" class="btn btn-primary" onclick="SubmitForm()">Submit</button>
+        </form>
