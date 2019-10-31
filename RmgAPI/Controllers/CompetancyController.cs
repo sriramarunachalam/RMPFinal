@@ -46,6 +46,18 @@ namespace RmgAPI.Controllers
             return Ok(employees);
         }
 
+        // GET: api/Competancy
+        [HttpGet("GetProjectEmployee")]
+        public IEnumerable<Employees> GetProjectEmployee()
+        {
+            string[] Group = {"OnBeanch", "OnTraining"};
+            var onProject = from s in _context.Employees
+                          where !s.CurrentProject.Contains("OnBeanch")
+                            where !s.CurrentProject.Contains("OnTraining")
+                            select s;
+            return onProject;
+        }
+
         // PUT: api/Competancy/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployees([FromRoute] int id, [FromBody] Employees employees)
