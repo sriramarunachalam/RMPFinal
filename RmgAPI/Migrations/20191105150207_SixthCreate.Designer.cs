@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RmgAPI.Models;
 
 namespace RmgAPI.Migrations
 {
     [DbContext(typeof(RMGdbContext))]
-    partial class RMGdbContextModelSnapshot : ModelSnapshot
+    [Migration("20191105150207_SixthCreate")]
+    partial class SixthCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,12 +36,11 @@ namespace RmgAPI.Migrations
 
             modelBuilder.Entity("RmgAPI.Models.Employees", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ContactNumber")
-                        .IsRequired();
+                    b.Property<int>("ContactNumber");
 
                     b.Property<string>("CurrentProject")
                         .IsRequired();
@@ -50,13 +51,11 @@ namespace RmgAPI.Migrations
                     b.Property<string>("EmployeeName")
                         .IsRequired();
 
-                    b.Property<int?>("Experience")
-                        .IsRequired();
+                    b.Property<int>("Experience");
 
                     b.Property<int?>("RequestID");
 
-                    b.Property<DateTime?>("StartDate")
-                        .IsRequired();
+                    b.Property<DateTime>("StartDate");
 
                     b.Property<string>("Technology")
                         .IsRequired();

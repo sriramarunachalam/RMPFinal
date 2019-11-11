@@ -29,7 +29,9 @@ namespace RmgAPI.Models
         [Required(ErrorMessage = "End Date is Required")]
         public DateTime EndDate { get; set; }
 
-        //[ForeignKey("Users")]
+        [Required(ErrorMessage = "Request Status is Required")]
+        public string Status { get; set; }
+
         public string Role { get; set; }
     }
 }

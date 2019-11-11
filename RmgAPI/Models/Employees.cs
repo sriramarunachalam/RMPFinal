@@ -11,7 +11,7 @@ namespace RmgAPI.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required(ErrorMessage = "Employee Name is Required")]
         public string EmployeeName { get; set; }
@@ -19,19 +19,25 @@ namespace RmgAPI.Models
         [Required(ErrorMessage = "Current Project is Required")]
         public string CurrentProject { get; set; }
 
+        // Current Project can be: BENCH, TRAINING, OR EY/ DELTA Etc.
+
         [Required(ErrorMessage = "Email is Required")]
-        public String Email { get; set; }
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Contact Number is Required")]
         public string ContactNumber { get; set; }
+
         [Required(ErrorMessage = "Experience is Required")]
-        public string Experience { get; set; }
+        public int? Experience { get; set; }
+
+        [Required(ErrorMessage = "Technology is Required")]
         public string Technology { get; set; }
-        public string src { get; set; }
 
-        [ForeignKey("Account")]
-        public int AccountID { get; set; }
+        [Required(ErrorMessage = "Start Date is Required")]
+        public DateTime? StartDate { get; set; }
 
-        
+        [ForeignKey("ListOfRequests")]
+        public int? RequestID { get; set; }
+
     }
 }

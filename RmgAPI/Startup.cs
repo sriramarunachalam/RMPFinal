@@ -39,7 +39,7 @@ namespace RmgAPI
             services.AddDbContext<RMGdbContext>(config =>
             {
                 config.UseSqlServer(Configuration
-                    .GetConnectionString("RmgConnection"));
+                    .GetConnectionString("FinalConnection"));
             });
 
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -100,7 +100,9 @@ namespace RmgAPI
                         }
                     }));                
             }
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            app.UseCors(options => options.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader().AllowAnyMethod());
 
             app.UseSwagger();
 

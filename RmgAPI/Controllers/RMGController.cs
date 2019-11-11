@@ -76,5 +76,39 @@ namespace RmgAPI.Controllers
             return Created("Request Succesfully Added", requests);
         }
 
+
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [HttpPost("Employee")]
+        public async Task<ActionResult<Employees>> AddEmployeeAsync([FromBody] Employees employees) 
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await db.Employees.AddAsync(employees);
+            await db.SaveChangesAsync();
+            return Created("Employee Succesfully Added", employees);
+
+        }
+
+
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [HttpGet("Employees")]
+        public ActionResult<IEnumerable<Employees>> GetAllEmployees() 
+        {
+            return db.Employees.ToList();
+        }
+
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [HttpGet("Employees/{RequestId}")]
+        public ActionResult<IEnumerable<Employees>> GetEmployeesbyRequestID(int RequestId)
+        {
+            List<Employees> EmployeesList = new List<Employees>();
+            EmployeesList = db.Employees.Where(E => E.RequestID == RequestId).ToList();
+            return EmployeesList;
+        }
+
     }
 }
